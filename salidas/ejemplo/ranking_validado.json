@@ -1,0 +1,81 @@
+{
+  "tipo_ejecucion": "motor_determinista",
+  "advertencia": "Precios, indicadores y tasa son simulados; no constituyen una oferta hipotecaria.",
+  "resumen_perfil": {
+    "efectivo_para_compra_mxn": 700000.0,
+    "pago_hipoteca_maximo_mxn": 19250.0,
+    "habitaciones_minimas": 2
+  },
+  "regla": "Excluir restricciones duras; score=0.70*zona+0.30*confort_financiero",
+  "ranking": [
+    {
+      "id": "VIV-B",
+      "nombre": "Vivienda B - Zona Oriente (simulada)",
+      "habitaciones": 3,
+      "puntaje_zona": 84.5,
+      "precio_mxn": 2150000,
+      "gastos_compra_mxn": 107500.0,
+      "enganche_mxn": 592500.0,
+      "prestamo_mxn": 1557500.0,
+      "mensualidad_mxn": 15549.77,
+      "pago_maximo_mxn": 19250.0,
+      "puntaje_financiero": 19.22,
+      "viable": true,
+      "motivos_exclusion": [],
+      "puntaje_final": 64.92,
+      "posicion": 1
+    },
+    {
+      "id": "VIV-C",
+      "nombre": "Vivienda C - Zona Poniente (simulada)",
+      "habitaciones": 2,
+      "puntaje_zona": 85.0,
+      "precio_mxn": 2350000,
+      "gastos_compra_mxn": 117500.0,
+      "enganche_mxn": 582500.0,
+      "prestamo_mxn": 1767500.0,
+      "mensualidad_mxn": 17646.36,
+      "pago_maximo_mxn": 19250.0,
+      "puntaje_financiero": 8.33,
+      "viable": true,
+      "motivos_exclusion": [],
+      "puntaje_final": 62.0,
+      "posicion": 2
+    },
+    {
+      "id": "VIV-A",
+      "nombre": "Vivienda A - Zona Norte (simulada)",
+      "habitaciones": 2,
+      "puntaje_zona": 71.95,
+      "precio_mxn": 1900000,
+      "gastos_compra_mxn": 95000.0,
+      "enganche_mxn": 605000.0,
+      "prestamo_mxn": 1295000.0,
+      "mensualidad_mxn": 12929.02,
+      "pago_maximo_mxn": 19250.0,
+      "puntaje_financiero": 32.84,
+      "viable": true,
+      "motivos_exclusion": [],
+      "puntaje_final": 60.22,
+      "posicion": 3
+    },
+    {
+      "id": "VIV-D",
+      "nombre": "Vivienda D - Zona Sur (simulada)",
+      "habitaciones": 3,
+      "puntaje_zona": 95.25,
+      "precio_mxn": 2750000,
+      "gastos_compra_mxn": 137500.0,
+      "enganche_mxn": 562500.0,
+      "prestamo_mxn": 2187500.0,
+      "mensualidad_mxn": 21839.56,
+      "pago_maximo_mxn": 19250.0,
+      "puntaje_financiero": 0.0,
+      "viable": false,
+      "motivos_exclusion": [
+        "Mensualidad supera capacidad de pago"
+      ],
+      "puntaje_final": null
+    }
+  ]
+}

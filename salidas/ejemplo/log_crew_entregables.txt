@@ -1,0 +1,107 @@
+
+=== TAREA COMPLETADA ===
+Las restricciones duras son:
+
+*   El usuario debe tener un ingreso mínimo de $65,000.00 MXN al mes.
+*   El usuario debe tener un ahorro disponible de $850,000.00 MXN.
+
+=== TAREA COMPLETADA ===
+La respuesta final es:
+
+[{"id": "VIV-A", "puntaje_zona": 71.95, "criterios": {"transporte": 72, "servicios": 82, "seguridad": 63, "accesibilidad": 70}}, {"id": "VIV-B", "puntaje_zona": 84.5, "criterios": {"transporte": 90, "servicios": 83, "seguridad": 78, "accesibilidad": 85}}, {"id": "VIV-C", "puntaje_zona": 85.0, "criterios": {"transporte": 78, "servicios": 94, "seguridad": 90, "accesibilidad": 78}}, {"id": "VIV-D", "puntaje_zona": 95.25, "criterios": {"transporte": 98, "servicios": 96, "seguridad": 92, "accesibilidad": 93}}]
+
+=== TAREA COMPLETADA ===
+La respuesta final es:
+
+```
+[
+    {
+        "id": "VIV-A",
+        "precio_mxn": 1900000,
+        "gastos_compra_mxn": 95000.0,
+        "enganche_mxn": 605000.0,
+        "prestamo_mxn": 1295000.0,
+        "mensualidad_mxn": 12929.02,
+        "pago_maximo_mxn": 19250.0,
+        "puntaje_financiero": 32.84,
+        "viable": true,
+        "motivos_exclusion": []
+    },
+    {
+        "id": "VIV-B",
+        "precio_mxn": 2150000,
+        "gastos_compra_mxn": 107500.0,
+        "enganche_mxn": 592500.0,
+        "prestamo_mxn": 1557500.0,
+        "mensualidad_mxn": 15549.77,
+        "pago_maximo_mxn": 19250.0,
+        "puntaje_financiero": 19.22,
+        "viable": true,
+        "motivos_exclusion": []
+    },
+    {
+        "id": "VIV-C",
+        "precio_mxn": 2350000,
+        "gastos_compra_mxn": 117500.0,
+        "enganche_mxn": 582500.0,
+        "prestamo_mxn": 1767500.0,
+        "mensualidad_mxn": 17646.36,
+        "pago_maximo_mxn": 19250.0,
+        "puntaje_financiero": 8.33,
+        "viable": true,
+        "motivos_exclusion": []
+    },
+    {
+        "id": "VIV-D",
+        "precio_mxn": 2750000,
+        "gastos_compra_mxn": 137500.0,
+        "enganche_mxn": 562500.0,
+        "prestamo_mxn": 2187500.0,
+        "mensualidad_mxn": 21839.56,
+        "pago_maximo_mxn": 19250.0,
+        "puntaje_financiero": 0.0,
+        "viable": false,
+        "motivos_exclusion": ["Mensualidad supera capacidad de pago"]
+    }
+]
+```
+
+Nota: Las estimaciones son aproximadas y pueden variar dependiendo de factores como la tasa de interés y la inflación.
+
+=== TAREA COMPLETADA ===
+**Ranking de Viviendas**
+
+**1. Vivienda B - Zona Oriente (simulada)**
+*   Puntaje final: 64.92
+*   Precio: $2,150,000 MXN
+*   Gastos de compra: $107,500 MXN
+*   Enganche: $592,500 MXN
+*   Prestamo: $1,557,500 MXN
+*   Mensualidad: $15,549.77 MXN
+*   Pago máximo: $19,250 MXN
+*   Puntaje financiero: 19.22
+*   Viable: Sí
+
+**2. Vivienda C - Zona Poniente (simulada)**
+*   Puntaje final: 62.0
+*   Precio: $2,350,000 MXN
+*   Gastos de compra: $117,500 MXN
+*   Enganche: $582,500 MXN
+*   Prestamo: $1,767,500 MXN
+*   Mensualidad: $17,646.36 MXN
+*   Pago máximo: $19,250 MXN
+*   Puntaje financiero: 8.33
+*   Viable: Sí
+
+**3. Vivienda A - Zona Norte (simulada)**
+*   Puntaje final: 60.22
+*   Precio: $1,900,000 MXN
+*   Gastos de compra: $95,000 MXN
+*   Enganche: $605,000 MXN
+*   Prestamo: $1,295,000 MXN
+*   Mensualidad: $12,929.02 MXN
+*   Pago máximo: $19,250 MXN
+*   Puntaje financiero: 32.84
+*   Viable: Sí
+
+**Nota:** Las estimaciones son aproximadas y pueden variar dependiendo de factores como la tasa de interés y la inflación. Los precios y indicadores son simulados y no constituyen una oferta hipotecaria.

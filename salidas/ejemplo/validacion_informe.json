@@ -1,0 +1,5 @@
+{
+  "estado": "incompleto_reparable",
+  "consistente_con_ranking": true,
+  "accion": "completado_con_exclusiones_deterministas"
+}

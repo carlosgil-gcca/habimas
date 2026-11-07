@@ -1,0 +1,471 @@
+[
+  {
+    "tarea": "T1",
+    "agente": "Analista de Perfil del Usuario",
+    "objetivo": "Validar y estructurar las restricciones económicas y preferencias.",
+    "entrada": {
+      "id_usuario": "CASO-DEMO-001",
+      "ingreso_mensual_neto": 65000.0,
+      "deudas_mensuales": 3500.0,
+      "ahorro_disponible": 850000.0,
+      "reserva_no_utilizable": 150000.0,
+      "habitaciones_minimas": 2,
+      "proporcion_ingreso_para_hipoteca_y_deudas": 0.35,
+      "plazo_anios": 20,
+      "tasa_anual_fija_simulada": 0.105,
+      "enganche_minimo_pct": 0.2,
+      "costos_compra_pct_simulado": 0.05,
+      "pesos_zona": {
+        "transporte": 0.35,
+        "servicios": 0.25,
+        "seguridad": 0.25,
+        "accesibilidad": 0.15
+      },
+      "peso_zona_final": 0.7,
+      "peso_financiero_final": 0.3,
+      "efectivo_para_compra_mxn": 700000.0,
+      "pago_hipoteca_maximo_mxn": 19250.0
+    },
+    "herramienta": "normalizar_perfil_usuario",
+    "proceso_determinista": [
+      "Valida campos obligatorios y porcentajes.",
+      "Resta la reserva al ahorro disponible.",
+      "Calcula el límite mensual después de deudas."
+    ],
+    "salida_herramienta": {
+      "id_usuario": "CASO-DEMO-001",
+      "ingreso_mensual_neto": 65000.0,
+      "deudas_mensuales": 3500.0,
+      "ahorro_disponible": 850000.0,
+      "reserva_no_utilizable": 150000.0,
+      "habitaciones_minimas": 2,
+      "proporcion_ingreso_para_hipoteca_y_deudas": 0.35,
+      "plazo_anios": 20,
+      "tasa_anual_fija_simulada": 0.105,
+      "enganche_minimo_pct": 0.2,
+      "costos_compra_pct_simulado": 0.05,
+      "pesos_zona": {
+        "transporte": 0.35,
+        "servicios": 0.25,
+        "seguridad": 0.25,
+        "accesibilidad": 0.15
+      },
+      "peso_zona_final": 0.7,
+      "peso_financiero_final": 0.3,
+      "efectivo_para_compra_mxn": 700000.0,
+      "pago_hipoteca_maximo_mxn": 19250.0
+    },
+    "entregable_agente": "Las restricciones duras son:\n\n*   El usuario debe tener un ingreso mínimo de $65,000.00 MXN al mes.\n*   El usuario debe tener un ahorro disponible de $850,000.00 MXN.",
+    "tipo_entregable": "real_crewai"
+  },
+  {
+    "tarea": "T2",
+    "agente": "Especialista en Evaluación Territorial",
+    "objetivo": "Comparar las viviendas con las prioridades territoriales del usuario.",
+    "entrada": {
+      "pesos_zona": {
+        "transporte": 0.35,
+        "servicios": 0.25,
+        "seguridad": 0.25,
+        "accesibilidad": 0.15
+      },
+      "alternativas": [
+        {
+          "id": "VIV-A",
+          "puntajes_zona": {
+            "transporte": 72,
+            "servicios": 82,
+            "seguridad": 63,
+            "accesibilidad": 70
+          }
+        },
+        {
+          "id": "VIV-B",
+          "puntajes_zona": {
+            "transporte": 90,
+            "servicios": 83,
+            "seguridad": 78,
+            "accesibilidad": 85
+          }
+        },
+        {
+          "id": "VIV-C",
+          "puntajes_zona": {
+            "transporte": 78,
+            "servicios": 94,
+            "seguridad": 90,
+            "accesibilidad": 78
+          }
+        },
+        {
+          "id": "VIV-D",
+          "puntajes_zona": {
+            "transporte": 98,
+            "servicios": 96,
+            "seguridad": 92,
+            "accesibilidad": 93
+          }
+        }
+      ]
+    },
+    "herramienta": "puntuar_alternativas_de_zona",
+    "proceso_determinista": [
+      "Multiplica cada indicador por su prioridad.",
+      "Suma los cuatro componentes.",
+      "Entrega un puntaje territorial de 0 a 100."
+    ],
+    "salida_herramienta": [
+      {
+        "id": "VIV-A",
+        "puntaje_zona": 71.95,
+        "criterios": {
+          "transporte": 72,
+          "servicios": 82,
+          "seguridad": 63,
+          "accesibilidad": 70
+        }
+      },
+      {
+        "id": "VIV-B",
+        "puntaje_zona": 84.5,
+        "criterios": {
+          "transporte": 90,
+          "servicios": 83,
+          "seguridad": 78,
+          "accesibilidad": 85
+        }
+      },
+      {
+        "id": "VIV-C",
+        "puntaje_zona": 85.0,
+        "criterios": {
+          "transporte": 78,
+          "servicios": 94,
+          "seguridad": 90,
+          "accesibilidad": 78
+        }
+      },
+      {
+        "id": "VIV-D",
+        "puntaje_zona": 95.25,
+        "criterios": {
+          "transporte": 98,
+          "servicios": 96,
+          "seguridad": 92,
+          "accesibilidad": 93
+        }
+      }
+    ],
+    "entregable_agente": "La respuesta final es:\n\n[{\"id\": \"VIV-A\", \"puntaje_zona\": 71.95, \"criterios\": {\"transporte\": 72, \"servicios\": 82, \"seguridad\": 63, \"accesibilidad\": 70}}, {\"id\": \"VIV-B\", \"puntaje_zona\": 84.5, \"criterios\": {\"transporte\": 90, \"servicios\": 83, \"seguridad\": 78, \"accesibilidad\": 85}}, {\"id\": \"VIV-C\", \"puntaje_zona\": 85.0, \"criterios\": {\"transporte\": 78, \"servicios\": 94, \"seguridad\": 90, \"accesibilidad\": 78}}, {\"id\": \"VIV-D\", \"puntaje_zona\": 95.25, \"criterios\": {\"transporte\": 98, \"servicios\": 96, \"seguridad\": 92, \"accesibilidad\": 93}}]",
+    "tipo_entregable": "real_crewai"
+  },
+  {
+    "tarea": "T3",
+    "agente": "Analista de Viabilidad Financiera",
+    "objetivo": "Calcular pagos y excluir alternativas que incumplen restricciones duras.",
+    "entrada": {
+      "capacidad": {
+        "efectivo_para_compra_mxn": 700000.0,
+        "pago_hipoteca_maximo_mxn": 19250.0,
+        "plazo_anios": 20,
+        "tasa_anual": 0.105,
+        "enganche_minimo_pct": 0.2
+      },
+      "alternativas": [
+        {
+          "id": "VIV-A",
+          "precio_mxn": 1900000,
+          "habitaciones": 2
+        },
+        {
+          "id": "VIV-B",
+          "precio_mxn": 2150000,
+          "habitaciones": 3
+        },
+        {
+          "id": "VIV-C",
+          "precio_mxn": 2350000,
+          "habitaciones": 2
+        },
+        {
+          "id": "VIV-D",
+          "precio_mxn": 2750000,
+          "habitaciones": 3
+        }
+      ]
+    },
+    "herramienta": "calcular_escenarios_hipotecarios",
+    "proceso_determinista": [
+      "Calcula gastos iniciales, enganche disponible y préstamo.",
+      "Aplica amortización francesa para obtener la mensualidad.",
+      "Evalúa liquidez, habitaciones y capacidad mensual."
+    ],
+    "salida_herramienta": [
+      {
+        "id": "VIV-A",
+        "precio_mxn": 1900000,
+        "gastos_compra_mxn": 95000.0,
+        "enganche_mxn": 605000.0,
+        "prestamo_mxn": 1295000.0,
+        "mensualidad_mxn": 12929.02,
+        "pago_maximo_mxn": 19250.0,
+        "puntaje_financiero": 32.84,
+        "viable": true,
+        "motivos_exclusion": []
+      },
+      {
+        "id": "VIV-B",
+        "precio_mxn": 2150000,
+        "gastos_compra_mxn": 107500.0,
+        "enganche_mxn": 592500.0,
+        "prestamo_mxn": 1557500.0,
+        "mensualidad_mxn": 15549.77,
+        "pago_maximo_mxn": 19250.0,
+        "puntaje_financiero": 19.22,
+        "viable": true,
+        "motivos_exclusion": []
+      },
+      {
+        "id": "VIV-C",
+        "precio_mxn": 2350000,
+        "gastos_compra_mxn": 117500.0,
+        "enganche_mxn": 582500.0,
+        "prestamo_mxn": 1767500.0,
+        "mensualidad_mxn": 17646.36,
+        "pago_maximo_mxn": 19250.0,
+        "puntaje_financiero": 8.33,
+        "viable": true,
+        "motivos_exclusion": []
+      },
+      {
+        "id": "VIV-D",
+        "precio_mxn": 2750000,
+        "gastos_compra_mxn": 137500.0,
+        "enganche_mxn": 562500.0,
+        "prestamo_mxn": 2187500.0,
+        "mensualidad_mxn": 21839.56,
+        "pago_maximo_mxn": 19250.0,
+        "puntaje_financiero": 0.0,
+        "viable": false,
+        "motivos_exclusion": [
+          "Mensualidad supera capacidad de pago"
+        ]
+      }
+    ],
+    "entregable_agente": "La respuesta final es:\n\n```\n[\n    {\n        \"id\": \"VIV-A\",\n        \"precio_mxn\": 1900000,\n        \"gastos_compra_mxn\": 95000.0,\n        \"enganche_mxn\": 605000.0,\n        \"prestamo_mxn\": 1295000.0,\n        \"mensualidad_mxn\": 12929.02,\n        \"pago_maximo_mxn\": 19250.0,\n        \"puntaje_financiero\": 32.84,\n        \"viable\": true,\n        \"motivos_exclusion\": []\n    },\n    {\n        \"id\": \"VIV-B\",\n        \"precio_mxn\": 2150000,\n        \"gastos_compra_mxn\": 107500.0,\n        \"enganche_mxn\": 592500.0,\n        \"prestamo_mxn\": 1557500.0,\n        \"mensualidad_mxn\": 15549.77,\n        \"pago_maximo_mxn\": 19250.0,\n        \"puntaje_financiero\": 19.22,\n        \"viable\": true,\n        \"motivos_exclusion\": []\n    },\n    {\n        \"id\": \"VIV-C\",\n        \"precio_mxn\": 2350000,\n        \"gastos_compra_mxn\": 117500.0,\n        \"enganche_mxn\": 582500.0,\n        \"prestamo_mxn\": 1767500.0,\n        \"mensualidad_mxn\": 17646.36,\n        \"pago_maximo_mxn\": 19250.0,\n        \"puntaje_financiero\": 8.33,\n        \"viable\": true,\n        \"motivos_exclusion\": []\n    },\n    {\n        \"id\": \"VIV-D\",\n        \"precio_mxn\": 2750000,\n        \"gastos_compra_mxn\": 137500.0,\n        \"enganche_mxn\": 562500.0,\n        \"prestamo_mxn\": 2187500.0,\n        \"mensualidad_mxn\": 21839.56,\n        \"pago_maximo_mxn\": 19250.0,\n        \"puntaje_financiero\": 0.0,\n        \"viable\": false,\n        \"motivos_exclusion\": [\"Mensualidad supera capacidad de pago\"]\n    }\n]\n```\n\nNota: Las estimaciones son aproximadas y pueden variar dependiendo de factores como la tasa de interés y la inflación.",
+    "tipo_entregable": "real_crewai"
+  },
+  {
+    "tarea": "T4",
+    "agente": "Coordinador de Recomendaciones de Vivienda",
+    "objetivo": "Integrar evaluaciones, aplicar exclusiones y explicar el ranking final.",
+    "entrada": {
+      "perfil_normalizado": {
+        "id_usuario": "CASO-DEMO-001",
+        "ingreso_mensual_neto": 65000.0,
+        "deudas_mensuales": 3500.0,
+        "ahorro_disponible": 850000.0,
+        "reserva_no_utilizable": 150000.0,
+        "habitaciones_minimas": 2,
+        "proporcion_ingreso_para_hipoteca_y_deudas": 0.35,
+        "plazo_anios": 20,
+        "tasa_anual_fija_simulada": 0.105,
+        "enganche_minimo_pct": 0.2,
+        "costos_compra_pct_simulado": 0.05,
+        "pesos_zona": {
+          "transporte": 0.35,
+          "servicios": 0.25,
+          "seguridad": 0.25,
+          "accesibilidad": 0.15
+        },
+        "peso_zona_final": 0.7,
+        "peso_financiero_final": 0.3,
+        "efectivo_para_compra_mxn": 700000.0,
+        "pago_hipoteca_maximo_mxn": 19250.0
+      },
+      "puntuaciones_territoriales": [
+        {
+          "id": "VIV-A",
+          "puntaje_zona": 71.95,
+          "criterios": {
+            "transporte": 72,
+            "servicios": 82,
+            "seguridad": 63,
+            "accesibilidad": 70
+          }
+        },
+        {
+          "id": "VIV-B",
+          "puntaje_zona": 84.5,
+          "criterios": {
+            "transporte": 90,
+            "servicios": 83,
+            "seguridad": 78,
+            "accesibilidad": 85
+          }
+        },
+        {
+          "id": "VIV-C",
+          "puntaje_zona": 85.0,
+          "criterios": {
+            "transporte": 78,
+            "servicios": 94,
+            "seguridad": 90,
+            "accesibilidad": 78
+          }
+        },
+        {
+          "id": "VIV-D",
+          "puntaje_zona": 95.25,
+          "criterios": {
+            "transporte": 98,
+            "servicios": 96,
+            "seguridad": 92,
+            "accesibilidad": 93
+          }
+        }
+      ],
+      "escenarios_financieros": [
+        {
+          "id": "VIV-A",
+          "precio_mxn": 1900000,
+          "gastos_compra_mxn": 95000.0,
+          "enganche_mxn": 605000.0,
+          "prestamo_mxn": 1295000.0,
+          "mensualidad_mxn": 12929.02,
+          "pago_maximo_mxn": 19250.0,
+          "puntaje_financiero": 32.84,
+          "viable": true,
+          "motivos_exclusion": []
+        },
+        {
+          "id": "VIV-B",
+          "precio_mxn": 2150000,
+          "gastos_compra_mxn": 107500.0,
+          "enganche_mxn": 592500.0,
+          "prestamo_mxn": 1557500.0,
+          "mensualidad_mxn": 15549.77,
+          "pago_maximo_mxn": 19250.0,
+          "puntaje_financiero": 19.22,
+          "viable": true,
+          "motivos_exclusion": []
+        },
+        {
+          "id": "VIV-C",
+          "precio_mxn": 2350000,
+          "gastos_compra_mxn": 117500.0,
+          "enganche_mxn": 582500.0,
+          "prestamo_mxn": 1767500.0,
+          "mensualidad_mxn": 17646.36,
+          "pago_maximo_mxn": 19250.0,
+          "puntaje_financiero": 8.33,
+          "viable": true,
+          "motivos_exclusion": []
+        },
+        {
+          "id": "VIV-D",
+          "precio_mxn": 2750000,
+          "gastos_compra_mxn": 137500.0,
+          "enganche_mxn": 562500.0,
+          "prestamo_mxn": 2187500.0,
+          "mensualidad_mxn": 21839.56,
+          "pago_maximo_mxn": 19250.0,
+          "puntaje_financiero": 0.0,
+          "viable": false,
+          "motivos_exclusion": [
+            "Mensualidad supera capacidad de pago"
+          ]
+        }
+      ]
+    },
+    "herramienta": "ranking_verificado",
+    "proceso_determinista": [
+      "Excluye primero todas las opciones no viables.",
+      "Combina zona y confort financiero con los pesos elegidos.",
+      "Ordena alternativas viables y conserva motivos de exclusión."
+    ],
+    "salida_herramienta": {
+      "tipo_ejecucion": "motor_determinista",
+      "advertencia": "Precios, indicadores y tasa son simulados; no constituyen una oferta hipotecaria.",
+      "resumen_perfil": {
+        "efectivo_para_compra_mxn": 700000.0,
+        "pago_hipoteca_maximo_mxn": 19250.0,
+        "habitaciones_minimas": 2
+      },
+      "regla": "Excluir restricciones duras; score=0.70*zona+0.30*confort_financiero",
+      "ranking": [
+        {
+          "id": "VIV-B",
+          "nombre": "Vivienda B - Zona Oriente (simulada)",
+          "habitaciones": 3,
+          "puntaje_zona": 84.5,
+          "precio_mxn": 2150000,
+          "gastos_compra_mxn": 107500.0,
+          "enganche_mxn": 592500.0,
+          "prestamo_mxn": 1557500.0,
+          "mensualidad_mxn": 15549.77,
+          "pago_maximo_mxn": 19250.0,
+          "puntaje_financiero": 19.22,
+          "viable": true,
+          "motivos_exclusion": [],
+          "puntaje_final": 64.92,
+          "posicion": 1
+        },
+        {
+          "id": "VIV-C",
+          "nombre": "Vivienda C - Zona Poniente (simulada)",
+          "habitaciones": 2,
+          "puntaje_zona": 85.0,
+          "precio_mxn": 2350000,
+          "gastos_compra_mxn": 117500.0,
+          "enganche_mxn": 582500.0,
+          "prestamo_mxn": 1767500.0,
+          "mensualidad_mxn": 17646.36,
+          "pago_maximo_mxn": 19250.0,
+          "puntaje_financiero": 8.33,
+          "viable": true,
+          "motivos_exclusion": [],
+          "puntaje_final": 62.0,
+          "posicion": 2
+        },
+        {
+          "id": "VIV-A",
+          "nombre": "Vivienda A - Zona Norte (simulada)",
+          "habitaciones": 2,
+          "puntaje_zona": 71.95,
+          "precio_mxn": 1900000,
+          "gastos_compra_mxn": 95000.0,
+          "enganche_mxn": 605000.0,
+          "prestamo_mxn": 1295000.0,
+          "mensualidad_mxn": 12929.02,
+          "pago_maximo_mxn": 19250.0,
+          "puntaje_financiero": 32.84,
+          "viable": true,
+          "motivos_exclusion": [],
+          "puntaje_final": 60.22,
+          "posicion": 3
+        },
+        {
+          "id": "VIV-D",
+          "nombre": "Vivienda D - Zona Sur (simulada)",
+          "habitaciones": 3,
+          "puntaje_zona": 95.25,
+          "precio_mxn": 2750000,
+          "gastos_compra_mxn": 137500.0,
+          "enganche_mxn": 562500.0,
+          "prestamo_mxn": 2187500.0,
+          "mensualidad_mxn": 21839.56,
+          "pago_maximo_mxn": 19250.0,
+          "puntaje_financiero": 0.0,
+          "viable": false,
+          "motivos_exclusion": [
+            "Mensualidad supera capacidad de pago"
+          ],
+          "puntaje_final": null
+        }
+      ]
+    },
+    "entregable_agente": "**Ranking de Viviendas**\n\n**1. Vivienda B - Zona Oriente (simulada)**\n*   Puntaje final: 64.92\n*   Precio: $2,150,000 MXN\n*   Gastos de compra: $107,500 MXN\n*   Enganche: $592,500 MXN\n*   Prestamo: $1,557,500 MXN\n*   Mensualidad: $15,549.77 MXN\n*   Pago máximo: $19,250 MXN\n*   Puntaje financiero: 19.22\n*   Viable: Sí\n\n**2. Vivienda C - Zona Poniente (simulada)**\n*   Puntaje final: 62.0\n*   Precio: $2,350,000 MXN\n*   Gastos de compra: $117,500 MXN\n*   Enganche: $582,500 MXN\n*   Prestamo: $1,767,500 MXN\n*   Mensualidad: $17,646.36 MXN\n*   Pago máximo: $19,250 MXN\n*   Puntaje financiero: 8.33\n*   Viable: Sí\n\n**3. Vivienda A - Zona Norte (simulada)**\n*   Puntaje final: 60.22\n*   Precio: $1,900,000 MXN\n*   Gastos de compra: $95,000 MXN\n*   Enganche: $605,000 MXN\n*   Prestamo: $1,295,000 MXN\n*   Mensualidad: $12,929.02 MXN\n*   Pago máximo: $19,250 MXN\n*   Puntaje financiero: 32.84\n*   Viable: Sí\n\n**Nota:** Las estimaciones son aproximadas y pueden variar dependiendo de factores como la tasa de interés y la inflación. Los precios y indicadores son simulados y no constituyen una oferta hipotecaria.",
+    "tipo_entregable": "real_crewai"
+  }
+]

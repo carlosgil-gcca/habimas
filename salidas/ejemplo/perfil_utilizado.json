@@ -1,0 +1,23 @@
+{
+  "id_usuario": "CASO-DEMO-001",
+  "ingreso_mensual_neto": 65000.0,
+  "deudas_mensuales": 3500.0,
+  "ahorro_disponible": 850000.0,
+  "reserva_no_utilizable": 150000.0,
+  "habitaciones_minimas": 2,
+  "proporcion_ingreso_para_hipoteca_y_deudas": 0.35,
+  "plazo_anios": 20,
+  "tasa_anual_fija_simulada": 0.105,
+  "enganche_minimo_pct": 0.2,
+  "costos_compra_pct_simulado": 0.05,
+  "pesos_zona": {
+    "transporte": 0.35,
+    "servicios": 0.25,
+    "seguridad": 0.25,
+    "accesibilidad": 0.15
+  },
+  "peso_zona_final": 0.7,
+  "peso_financiero_final": 0.3,
+  "efectivo_para_compra_mxn": 700000.0,
+  "pago_hipoteca_maximo_mxn": 19250.0
+}

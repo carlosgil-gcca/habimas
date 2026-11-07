@@ -1,0 +1,72 @@
+[
+  {
+    "id": "VIV-A",
+    "nombre": "Vivienda A - Zona Norte (simulada)",
+    "precio_mxn": 1900000,
+    "habitaciones": 2,
+    "puntajes_zona": {"transporte": 72, "servicios": 82, "seguridad": 63, "accesibilidad": 70}
+  },
+  {
+    "id": "VIV-B",
+    "nombre": "Vivienda B - Zona Oriente (simulada)",
+    "precio_mxn": 2150000,
+    "habitaciones": 3,
+    "puntajes_zona": {"transporte": 90, "servicios": 83, "seguridad": 78, "accesibilidad": 85}
+  },
+  {
+    "id": "VIV-C",
+    "nombre": "Vivienda C - Zona Poniente (simulada)",
+    "precio_mxn": 2350000,
+    "habitaciones": 2,
+    "puntajes_zona": {"transporte": 78, "servicios": 94, "seguridad": 90, "accesibilidad": 78}
+  },
+  {
+    "id": "VIV-D",
+    "nombre": "Vivienda D - Zona Sur (simulada)",
+    "precio_mxn": 2750000,
+    "habitaciones": 3,
+    "puntajes_zona": {"transporte": 98, "servicios": 96, "seguridad": 92, "accesibilidad": 93}
+  },
+  {
+    "id": "VIV-E",
+    "nombre": "Vivienda E - Zona Centro (simulada)",
+    "precio_mxn": 2150000,
+    "habitaciones": 2,
+    "puntajes_zona": {"transporte": 87, "servicios": 91, "seguridad": 68, "accesibilidad": 94}
+  },
+  {
+    "id": "VIV-F",
+    "nombre": "Vivienda F - Zona Noreste (simulada)",
+    "precio_mxn": 1650000,
+    "habitaciones": 2,
+    "puntajes_zona": {"transporte": 58, "servicios": 70, "seguridad": 80, "accesibilidad": 62}
+  },
+  {
+    "id": "VIV-G",
+    "nombre": "Vivienda G - Zona Metropolitana (simulada)",
+    "precio_mxn": 2450000,
+    "habitaciones": 3,
+    "puntajes_zona": {"transporte": 91, "servicios": 88, "seguridad": 86, "accesibilidad": 90}
+  },
+  {
+    "id": "VIV-H",
+    "nombre": "Vivienda H - Zona Universitaria (simulada)",
+    "precio_mxn": 1750000,
+    "habitaciones": 1,
+    "puntajes_zona": {"transporte": 86, "servicios": 89, "seguridad": 81, "accesibilidad": 92}
+  },
+  {
+    "id": "VIV-I",
+    "nombre": "Vivienda I - Zona Residencial Premium (simulada)",
+    "precio_mxn": 2950000,
+    "habitaciones": 4,
+    "puntajes_zona": {"transporte": 76, "servicios": 97, "seguridad": 96, "accesibilidad": 84}
+  },
+  {
+    "id": "VIV-J",
+    "nombre": "Vivienda J - Zona Noroeste (simulada)",
+    "precio_mxn": 1850000,
+    "habitaciones": 3,
+    "puntajes_zona": {"transporte": 67, "servicios": 75, "seguridad": 72, "accesibilidad": 69}
+  }
+]

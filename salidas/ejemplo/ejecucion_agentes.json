@@ -1,0 +1,13 @@
+{
+  "framework": "CrewAI",
+  "modelo": "llama3.1:8b",
+  "agentes_configurados": 4,
+  "tareas_completadas": 4,
+  "ejecucion_real": true,
+  "herramientas": [
+    "normalizar_perfil_usuario",
+    "puntuar_alternativas_de_zona",
+    "calcular_escenarios_hipotecarios",
+    "ranking_verificado"
+  ]
+}

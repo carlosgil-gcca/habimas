@@ -1,0 +1,22 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Archivos locales de Python y editores
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Las ejecuciones nuevas contienen evidencia local y no deben versionarse.
+# Se conserva únicamente salidas/ejemplo como caso reproducible del proyecto.
+salidas/ejecuciones/
+salidas/log_demo.txt
+salidas/ranking_demo.json
+salidas/informe_crew.md
+salidas/log_crew_entregables.txt
+
+# Artefactos temporales de revisión documental
+entregables/
